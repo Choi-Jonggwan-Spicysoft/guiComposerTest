@@ -13,6 +13,13 @@ function scene:create( event )
     local txtTitle = self:getObjectByTag( "txtTitle" )
     txtTitle.text = "トップシーン"
 
+    --画像の入れ替え-------------------------------------------------------------
+    local img1 = self:getObjectByTag( "img1" )
+    local img2 = display.newImage( "drawable/player2.png" )
+    img2.x, img2.y = img1.x, img1.y
+    img1:removeSelf()
+    img1 = nil
+
     --画面遷移ボタン設定----------------------------------------------------------
     --テキスト
     local textBtnLeft   = self:getObjectByTag( "txtLeft" )
